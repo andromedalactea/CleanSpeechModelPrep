@@ -1,5 +1,6 @@
 # Personal gitignore file for Python projects
 test_audio_files/
+output_files/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

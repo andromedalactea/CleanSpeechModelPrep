@@ -67,7 +67,7 @@ class cleanAudioFile:
 if __name__ == "__main__":
     
     input_audio_path = 'test_audio_files/e005.wav'  # Replace with your audio file path
-    output_audio_path = f'cleaned_audio_e005.wav'  # Replace with your desired output path
+    output_audio_path = f'output_files/cleaned_audio_e005.wav'  # Replace with your desired output path
 
     # Parameters for clean audio file
     noise_reduction_level = 0.8   # Adjust this value between 0 (no reduction) and 1 (maximum reduction)
