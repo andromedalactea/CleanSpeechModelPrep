@@ -9,7 +9,7 @@ class cleanAudioFile:
         self.audio_path = audio_path # The path to the input audio file.
         self.output_audio_path = output_audio_path # The path where the cleaned audio file will be saved.
     
-    def reduce_background_noise(self, noise_reduction_level=0.1):
+    def reduce_background_noise(self, noise_reduction_level=0.7):
         """
         Reduces the background noise from an audio file and saves the cleaned audio.
 
@@ -67,13 +67,13 @@ class cleanAudioFile:
 if __name__ == "__main__":
     
     input_audio_path = 'test_audio_files/e005.wav'  # Replace with your audio file path
-    output_audio_path = f'cleaned_audio.wav'  # Replace with your desired output path
+    output_audio_path = f'cleaned_audio_e005.wav'  # Replace with your desired output path
 
     # Parameters for clean audio file
     noise_reduction_level = 0.8   # Adjust this value between 0 (no reduction) and 1 (maximum reduction)
-    silence_threshold = -50 # dB parameter to determine what is considered silence
+    silence_threshold = -60 # dB parameter to determine what is considered silence (absolute(lower value) = more silence detected)
     min_silence_len = 1000 # milliseconds of silence required to split the audio
-    keep_silence = 100 # milliseconds of silence to leave at the beginning and end of each chunk
+    keep_silence = 150 # milliseconds of silence to leave at the beginning and end of each chunk, to have a smooth transition
 
     # Process the audio file
     audio_cleaner = cleanAudioFile(input_audio_path, output_audio_path)
