@@ -1,3 +1,4 @@
+import os
 import noisereduce as nr
 import librosa
 import soundfile as sf
@@ -78,3 +79,19 @@ if __name__ == "__main__":
     # Process the audio file
     audio_cleaner = cleanAudioFile(input_audio_path, output_audio_path)
     audio_cleaner.main(noise_reduction_level, silence_threshold, min_silence_len, keep_silence)
+
+    # Procedure for a folder
+    
+    # Itera sobre todos los archivos en el directorio de entrada
+    for filename in os.listdir('test_audio_files'):
+        try:
+            if filename.endswith(".wav"):  # Ajusta esta condición para otros formatos de audio
+                input_audio_path = os.path.join('test_audio_files', filename)
+                output_audio_path = os.path.join('output_files', f"cleaned_{filename}".replace(".wav.wav", ".wav"))
+                
+                # Aplica la transformación al archivo de audio
+                audio_cleaner = cleanAudioFile(input_audio_path, output_audio_path)
+                audio_cleaner.main(noise_reduction_level, silence_threshold, min_silence_len, keep_silence)
+
+                print(f"Archivo procesado y guardado en: {output_audio_path}")
+        except: print(f"Error al procesar el archivo: {filename}")
