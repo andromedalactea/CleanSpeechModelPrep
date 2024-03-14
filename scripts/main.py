@@ -77,8 +77,8 @@ if __name__ == "__main__":
     keep_silence = 150 # milliseconds of silence to leave at the beginning and end of each chunk, to have a smooth transition
 
     # Process the audio file
-    audio_cleaner = cleanAudioFile(input_audio_path, output_audio_path)
-    audio_cleaner.main(noise_reduction_level, silence_threshold, min_silence_len, keep_silence)
+    # audio_cleaner = cleanAudioFile(input_audio_path, output_audio_path)
+    # audio_cleaner.main(noise_reduction_level, silence_threshold, min_silence_len, keep_silence)
 
     # Procedure for a folder
     
